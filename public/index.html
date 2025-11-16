@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="favicon.png" />
-  <title>GLACIER - Secure Web Viwer</title>
+  <title>GLACIER - Secure Web Viewer</title>
   <style>
     * {
       margin: 0;
@@ -22,43 +22,45 @@
     }
 
     .browser-chrome {
-      background: #ffffff;
-      padding: 12px 30px;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      border-bottom: 1px solid #e8f4f8;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
+      background: #ffffff !important;
+      padding: 8px 24px !important;
+      display: flex !important;
+      gap: 16px !important;
+      align-items: center !important;
+      border-bottom: 1px solid #e8f4f8 !important;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 10000 !important;
+      height: auto !important;
+      min-height: auto !important;
+      max-height: none !important;
+      box-sizing: border-box !important;
     }
 
-    /* ▼▼▼ CSS修正箇所 ▼▼▼ */
     .browser-chrome .logo {
       font-weight: 200 !important;
-      font-size: 20px !important;
+      font-size: 18px !important;
       color: #4fc3f7 !important;
       letter-spacing: 2px !important;
-      margin-right: 20px !important;
+      margin-right: 16px !important;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif !important;
     }
-    /* ▲▲▲ CSS修正箇所 ▲▲▲ */
 
     .url-bar {
-      flex: 1;
-      display: flex;
-      gap: 10px;
+      flex: 1 !important;
+      display: flex !important;
+      gap: 10px !important;
+      min-width: 0 !important;
     }
 
-    /* ▼▼▼ CSS修正箇所 ▼▼▼ */
     .browser-chrome #urlInput {
       flex: 1;
-      padding: 10px 20px !important;
+      padding: 8px 16px !important;
       border: 1px solid #e0e0e0 !important;
-      border-radius: 8px !important;
-      font-size: 14px !important;
+      border-radius: 6px !important;
+      font-size: 13px !important;
       font-weight: 300 !important;
       outline: none !important;
       background: #fafafa !important;
@@ -73,13 +75,13 @@
     }
 
     .browser-chrome button {
-      padding: 10px 28px !important;
+      padding: 8px 24px !important;
       background: #4fc3f7 !important;
       color: white !important;
       border: none !important;
-      border-radius: 8px !important;
+      border-radius: 6px !important;
       cursor: pointer !important;
-      font-size: 14px !important;
+      font-size: 13px !important;
       font-weight: 300 !important;
       transition: all 0.3s ease !important;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif !important;
@@ -94,25 +96,24 @@
       cursor: not-allowed !important;
       color: #9e9e9e !important;
     }
-    /* ▲▲▲ CSS修正箇所 ▲▲▲ */
 
     .nav-buttons {
-      display: flex;
-      gap: 8px;
+      display: flex !important;
+      gap: 8px !important;
+      flex-shrink: 0 !important;
     }
 
-    /* ▼▼▼ CSS修正箇所 ▼▼▼ */
     .browser-chrome .nav-btn {
-      width: 38px !important;
-      height: 38px !important;
+      width: 32px !important;
+      height: 32px !important;
       padding: 0 !important;
-      border-radius: 8px !important;
+      border-radius: 6px !important;
       background: #f5f5f5 !important;
       color: #757575 !important;
       font-weight: 300 !important;
-      font-size: 18px !important;
+      font-size: 16px !important;
       transition: all 0.2s ease !important;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif !important;
+      font-family: -apple-system, BlinkMacSystemForm, 'Segoe UI', 'Helvetica Neue', sans-serif !important;
     }
 
     .browser-chrome .nav-btn:hover:not(:disabled) {
@@ -124,21 +125,20 @@
       background: #fafafa !important;
       color: #e0e0e0 !important;
     }
-    /* ▲▲▲ CSS修正箇所 ▲▲▲ */
 
     .status {
-      padding: 16px 30px;
-      background: #fff9c4;
-      font-size: 14px;
-      font-weight: 300;
-      display: none;
-      animation: slideDown 0.3s ease;
-      border-bottom: 1px solid #fff59d;
-      position: fixed;
-      top: 62px;
-      left: 0;
-      right: 0;
-      z-index: 999;
+      padding: 16px 30px !important;
+      background: #fff9c4 !important;
+      font-size: 14px !important;
+      font-weight: 300 !important;
+      display: none !important;
+      animation: slideDown 0.3s ease !important;
+      border-bottom: 1px solid #fff59d !important;
+      position: fixed !important;
+      top: 50px !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 9999 !important;
     }
 
     @keyframes slideDown {
@@ -153,41 +153,75 @@
     }
 
     .status.show {
-      display: block;
+      display: block !important;
     }
 
     .status.error {
-      background: #ffebee;
-      color: #c62828;
-      border-bottom: 1px solid #ef9a9a;
+      background: #ffebee !important;
+      color: #c62828 !important;
+      border-bottom: 1px solid #ef9a9a !important;
     }
 
     .status.success {
-      background: #e0f7fa;
-      color: #00796b;
-      border-bottom: 1px solid #b2ebf2;
+      background: #e0f7fa !important;
+      color: #00796b !important;
+      border-bottom: 1px solid #b2ebf2 !important;
     }
 
-    /* ▼▼▼ CSS修正箇所：高さを完全に占めるために flex を追加 ▼▼▼ */
+    .error-toast {
+      position: fixed !important;
+      bottom: 20px !important;
+      left: 20px !important;
+      background: #c62828 !important;
+      color: white !important;
+      padding: 16px 24px !important;
+      border-radius: 8px !important;
+      font-size: 14px !important;
+      font-weight: 300 !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+      display: none !important;
+      animation: slideInLeft 0.3s ease !important;
+      z-index: 20000 !important;
+    }
+
+    .error-toast.show {
+      display: block !important;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
     #content {
-      flex: 1;
-      background: white;
-      overflow: auto;
-      margin-top: 62px;
-      
-      /* position:fixed 重なり防止のための設定 */
-      transform: translateZ(0);
-
-      display: flex; /* flex コンテナ化 */
-      flex-direction: column;
+      flex: 1 !important;
+      background: white !important;
+      overflow: auto !important;
+      margin-top: 50px !important;
+      transform: translateZ(0) !important;
+      display: flex !important;
+      flex-direction: column !important;
     }
-    /* ▲▲▲ CSS修正箇所 ▲▲▲ */
+    
+    .external-content-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      isolation: isolate;
+    }
 
     .loading {
       text-align: center;
       padding: 40px;
       color: #9e9e9e;
       font-weight: 300;
+      display: none;
     }
 
     .spinner {
@@ -205,7 +239,6 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* ▼▼▼ CSS修正箇所：背景設定と高さを完全に占めるための flex: 1 を追加 ▼▼▼ */
     .welcome-screen {
       text-align: center;
       padding: 120px 20px;
@@ -213,9 +246,30 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      flex: 1; /* 親要素 #content の残りのスペースを全て占める */
+      position: relative;
+      min-height: 100vh;
     }
-    /* ▲▲▲ CSS修正箇所 ▲▲▲ */
+    
+    .history-btn {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      background-image: url('history.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+      background-color: transparent;
+    }
+    
+    .history-btn:hover {
+      opacity: 1;
+    }
 
     .welcome-screen h2 {
       font-size: 72px;
@@ -266,6 +320,223 @@
     .welcome-search button:hover {
       background: #29b6f6;
     }
+    
+    /* 説明セクション */
+    .description-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 120px 40px;
+      color: white;
+      text-align: center;
+    }
+    
+    .description-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .description-title {
+      font-size: 56px;
+      font-weight: 100;
+      margin-bottom: 30px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    
+    .description-subtitle {
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 80px;
+      opacity: 0.95;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 50px;
+      margin-top: 80px;
+    }
+    
+    .feature-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 50px 40px;
+      border-radius: 20px;
+      transition: transform 0.3s ease, background 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-15px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .feature-icon {
+      font-size: 64px;
+      margin-bottom: 25px;
+    }
+    
+    .feature-title {
+      font-size: 26px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    
+    .feature-description {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+    
+    /* 履歴モーダル */
+    .history-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 3000;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .history-modal.show {
+      display: flex;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .history-content {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 70vh;
+      overflow-y: auto;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.3s ease;
+    }
+    
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    .history-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 15px;
+    }
+    
+    .history-header h3 {
+      font-size: 24px;
+      font-weight: 300;
+      color: #4fc3f7;
+      margin: 0;
+    }
+    
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #9e9e9e;
+      cursor: pointer;
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      line-height: 1;
+      transition: color 0.3s ease;
+    }
+    
+    .close-btn:hover {
+      color: #4fc3f7;
+    }
+    
+    .history-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .history-item {
+      padding: 12px 16px;
+      border-bottom: 1px solid #f5f5f5;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    
+    .history-item:hover {
+      background: #e3f2fd;
+    }
+    
+    .history-item:last-child {
+      border-bottom: none;
+    }
+    
+    .history-item-url {
+      font-size: 14px;
+      color: #333;
+      font-weight: 400;
+      word-break: break-all;
+    }
+    
+    .history-item-time {
+      font-size: 12px;
+      color: #9e9e9e;
+      margin-top: 4px;
+    }
+    
+    .history-empty {
+      text-align: center;
+      padding: 40px 20px;
+      color: #9e9e9e;
+      font-weight: 300;
+    }
+    
+    .clear-history-btn {
+      width: 100%;
+      padding: 12px;
+      background: #ffebee;
+      color: #c62828;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 300;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+    
+    .clear-history-btn:hover {
+      background: #ffcdd2;
+    }
   </style>
 </head>
 <body>
@@ -284,14 +555,66 @@
   </div>
 
   <div class="status" id="status"></div>
+  <div class="error-toast" id="errorToast">エラーが発生しました。</div>
 
   <div id="content">
     <div class="welcome-screen">
+      <button class="history-btn" id="historyBtn" title="履歴"></button>
       <h2>GLACIER</h2>
       <div class="welcome-search">
         <input type="text" id="welcomeUrlInput" placeholder="Enter URL">
         <button id="welcomeGoBtn">Go</button>
       </div>
+    </div>
+    
+    <!-- 説明セクション -->
+    <div class="description-section">
+      <div class="description-container">
+        <h3 class="description-title">Next Generation Browsing</h3>
+        <p class="description-subtitle">
+          GLACIERは、プライバシーとセキュリティを最優先に設計された<br>
+          次世代型Webブラウザです。シンプルで洗練されたインターフェースが、<br>
+          あなたのブラウジング体験を革新します。
+        </p>
+        
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h4 class="feature-title">Secure</h4>
+            <p class="feature-description">
+              高度な暗号化技術により、あなたの通信を完全に保護。プライバシーを守りながら安全なブラウジングを実現します。
+            </p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h4 class="feature-title">Fast</h4>
+            <p class="feature-description">
+              最適化されたエンジンにより、超高速なページ読み込みを実現。ストレスのないスムーズな操作感を提供します。
+            </p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h4 class="feature-title">Minimal</h4>
+            <p class="feature-description">
+              無駄を省いたミニマルデザイン。本当に必要な機能だけを厳選し、直感的で使いやすいUIを実現しました。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 履歴モーダル -->
+  <div class="history-modal" id="historyModal">
+    <div class="history-content">
+      <div class="history-header">
+        <h3>閲覧履歴</h3>
+        <button class="close-btn" id="closeHistoryBtn">×</button>
+      </div>
+      <ul class="history-list" id="historyList"></ul>
+      <button class="clear-history-btn" id="clearHistoryBtn">履歴をすべて削除</button>
     </div>
   </div>
 
@@ -304,14 +627,20 @@
     const reloadBtn = document.getElementById('reloadBtn');
     const contentDiv = document.getElementById('content');
     const statusDiv = document.getElementById('status');
+    const errorToast = document.getElementById('errorToast');
     const welcomeUrlInput = document.getElementById('welcomeUrlInput');
     const welcomeGoBtn = document.getElementById('welcomeGoBtn');
+    const historyBtn = document.getElementById('historyBtn');
+    const historyModal = document.getElementById('historyModal');
+    const closeHistoryBtn = document.getElementById('closeHistoryBtn');
+    const historyList = document.getElementById('historyList');
+    const clearHistoryBtn = document.getElementById('clearHistoryBtn');
 
     let history = [];
     let historyIndex = -1;
     let currentUrl = '';
+    let browsingHistory = [];
 
-    // クライアント側でURLを短縮(Base64エンコード)
     function shortenUrl(url) {
       try {
         return btoa(unescape(encodeURIComponent(url)));
@@ -321,7 +650,6 @@
       }
     }
 
-    // ステータスメッセージ表示
     function showStatus(message, type = 'info') {
       statusDiv.textContent = message;
       statusDiv.className = `status show ${type}`;
@@ -330,33 +658,48 @@
       }, 3000);
     }
 
-    // ナビゲーションボタンの更新
+    function showError(message = 'エラーが発生しました。') {
+      errorToast.textContent = message;
+      errorToast.classList.add('show');
+      setTimeout(() => {
+        errorToast.classList.remove('show');
+      }, 4000);
+    }
+
     function updateNavButtons() {
       backBtn.disabled = historyIndex <= 0;
       forwardBtn.disabled = historyIndex >= history.length - 1;
       reloadBtn.disabled = !currentUrl;
     }
 
-    // URLの読み込み
+    function isUrl(text) {
+      const urlPattern = /^([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:[0-9]+)?(\/.*)?$|^localhost(:[0-9]+)?(\/.*)?$/;
+      const ipPattern = /^(\d{1,3}\.){3}\d{1,3}(:[0-9]+)?(\/.*)?$/;
+      
+      return text.startsWith('http://') || 
+             text.startsWith('https://') || 
+             urlPattern.test(text) ||
+             ipPattern.test(text);
+    }
+
     async function loadUrl(url, addToHistory = true) {
       if (!url) return;
 
-      // URLの正規化
-      if (!url.startsWith('http://') && !url.startsWith('https://')) {
-        url = 'https://' + url;
+      if (!isUrl(url)) {
+        url = `https://search.brave.com/search?q=${encodeURIComponent(url)}`;
+      } else {
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+          url = 'https://' + url;
+        }
       }
 
       try {
         goBtn.disabled = true;
-        contentDiv.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading...</p></div>';
         
-        // クライアント側でURL短縮(Base64エンコード)
         const shortUrl = shortenUrl(url);
         
-        showStatus('Secure connection loading...', 'info');
         console.log('Sending encoded URL:', shortUrl);
 
-        // 短縮URLでHTML取得(元のURLは送信しない)
         const fetchRes = await fetch(`/fetch?h=${encodeURIComponent(shortUrl)}`);
         
         console.log('Response status:', fetchRes.status);
@@ -368,43 +711,54 @@
           throw new Error(data.error || 'Failed to fetch');
         }
 
-        // HTMLを表示
         currentUrl = data.url;
         urlInput.value = currentUrl;
         displayHtml(data.html, currentUrl);
 
-        // 履歴に追加
         if (addToHistory) {
           historyIndex++;
           history = history.slice(0, historyIndex);
           history.push(currentUrl);
+          
+          const existingIndex = browsingHistory.findIndex(item => item.url === currentUrl);
+          if (existingIndex !== -1) {
+            browsingHistory.splice(existingIndex, 1);
+          }
+          browsingHistory.unshift({
+            url: currentUrl,
+            timestamp: new Date().toLocaleString('ja-JP')
+          });
+          
+          if (browsingHistory.length > 100) {
+            browsingHistory = browsingHistory.slice(0, 100);
+          }
+          
+          try {
+            localStorage.setItem('browsingHistory', JSON.stringify(browsingHistory));
+          } catch (e) {
+            console.error('Failed to save history:', e);
+          }
         }
 
         updateNavButtons();
-        showStatus('Loading complete', 'success');
 
       } catch (error) {
         console.error('Error:', error);
-        contentDiv.innerHTML = `
-          <div style="padding: 80px 40px; text-align: center;">
-            <div style="font-size: 64px; margin-bottom: 20px; opacity: 0.3;">⚠</div>
-            <h2 style="color: #c62828; font-size: 32px; font-weight: 200; margin-bottom: 15px;">Connection Error</h2>
-            <p style="color: #9e9e9e; font-size: 16px; font-weight: 300;">${error.message}</p>
-          </div>
-        `;
-        showStatus('Error occurred', 'error');
+        showError('エラーが発生しました。');
       } finally {
         goBtn.disabled = false;
       }
     }
 
-    // HTMLの表示とリンク・リソースの処理
     function displayHtml(html, baseUrl) {
-      contentDiv.innerHTML = html;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'external-content-wrapper';
+      wrapper.innerHTML = html;
+      
+      contentDiv.innerHTML = '';
+      contentDiv.appendChild(wrapper);
 
-      // URL解決のヘルパー関数
       function resolveUrl(relativeUrl, baseUrl) {
-        // http, https, data:, mailto: などはそのまま返す
         if (!relativeUrl || relativeUrl.startsWith('http') || relativeUrl.startsWith('data:') || relativeUrl.startsWith('mailto:')) {
             return relativeUrl;
         }
@@ -413,14 +767,10 @@
             const base = new URL(baseUrl);
             
             if (relativeUrl.startsWith('//')) {
-                // プロトコル相対URL (例: //example.com/style.css)
                 return base.protocol + relativeUrl;
             } else if (relativeUrl.startsWith('/')) {
-                // ドメイン絶対パス (例: /style.css)
                 return base.origin + relativeUrl;
             } else {
-                // 相対パス (例: style.css)
-                // パス解決のため、pathnameの最後の要素(ファイル名)を除外
                 const pathSegments = base.pathname.split('/').slice(0, -1);
                 return base.origin + pathSegments.join('/') + '/' + relativeUrl;
             }
@@ -430,38 +780,77 @@
         }
       }
 
-      // CSSリンクのhrefを絶対パスに変換
-      const cssLinks = contentDiv.querySelectorAll('link[rel="stylesheet"], link[rel="preload"][as="style"]');
+      const cssLinks = wrapper.querySelectorAll('link[rel="stylesheet"], link[rel="preload"][as="style"]');
       cssLinks.forEach(link => {
         const href = link.getAttribute('href');
         link.href = resolveUrl(href, baseUrl);
       });
 
-
-      // すべてのリンクにクリックイベントを追加
-      const anchorTags = contentDiv.querySelectorAll('a[href]');
+      const anchorTags = wrapper.querySelectorAll('a[href]');
       anchorTags.forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
           let href = link.getAttribute('href');
 
           if (href.startsWith('#')) {
-             return; // アンカーリンクは無視
+             return;
           }
 
-          loadUrl(resolveUrl(href, baseUrl)); // resolveUrlで絶対パス化してロード
+          loadUrl(resolveUrl(href, baseUrl));
         });
       });
 
-      // 画像のsrcを修正
-      const images = contentDiv.querySelectorAll('img[src]');
+      const images = wrapper.querySelectorAll('img[src]');
       images.forEach(img => {
         let src = img.getAttribute('src');
         img.src = resolveUrl(src, baseUrl);
       });
     }
 
-    // イベントリスナー
+    function showHistory() {
+      historyList.innerHTML = '';
+      
+      if (browsingHistory.length === 0) {
+        historyList.innerHTML = '<div class="history-empty">閲覧履歴はありません</div>';
+        return;
+      }
+      
+      browsingHistory.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'history-item';
+        li.innerHTML = `
+          <div class="history-item-url">${item.url}</div>
+          <div class="history-item-time">${item.timestamp}</div>
+        `;
+        li.addEventListener('click', () => {
+          historyModal.classList.remove('show');
+          loadUrl(item.url);
+        });
+        historyList.appendChild(li);
+      });
+    }
+    
+    function clearHistory() {
+      if (confirm('すべての閲覧履歴を削除しますか?')) {
+        browsingHistory = [];
+        try {
+          localStorage.removeItem('browsingHistory');
+        } catch (e) {
+          console.error('Failed to clear history:', e);
+        }
+        showHistory();
+      }
+    }
+    
+    try {
+      const savedHistory = localStorage.getItem('browsingHistory');
+      if (savedHistory) {
+        browsingHistory = JSON.parse(savedHistory);
+      }
+    } catch (e) {
+      console.error('Failed to load history:', e);
+    }
+
     goBtn.addEventListener('click', () => loadUrl(urlInput.value));
     urlInput.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') loadUrl(urlInput.value);
@@ -477,22 +866,62 @@
       urlInput.value = '';
       historyIndex = -1;
       history = [];
-      // ホーム画面のHTML構造は変更なし
       contentDiv.innerHTML = `
         <div class="welcome-screen">
+          <button class="history-btn" id="historyBtn" title="履歴"></button>
           <h2>GLACIER</h2>
           <div class="welcome-search">
             <input type="text" id="welcomeUrlInput" placeholder="Enter URL">
             <button id="welcomeGoBtn">Go</button>
           </div>
         </div>
+        <div class="description-section">
+          <div class="description-container">
+            <h3 class="description-title">Next Generation Browsing</h3>
+            <p class="description-subtitle">
+              GLACIERは、プライバシーとセキュリティを最優先に設計された<br>
+              次世代型Webブラウザです。シンプルで洗練されたインターフェースが、<br>
+              あなたのブラウジング体験を革新します。
+            </p>
+            
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h4 class="feature-title">Secure</h4>
+                <p class="feature-description">
+                  高度な暗号化技術により、あなたの通信を完全に保護。プライバシーを守りながら安全なブラウジングを実現します。
+                </p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h4 class="feature-title">Fast</h4>
+                <p class="feature-description">
+                  最適化されたエンジンにより、超高速なページ読み込みを実現。ストレスのないスムーズな操作感を提供します。
+                </p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h4 class="feature-title">Minimal</h4>
+                <p class="feature-description">
+                  無駄を省いたミニマルデザイン。本当に必要な機能だけを厳選し、直感的で使いやすいUIを実現しました。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       `;
-      // ホーム画面の検索バーに再度イベントリスナーを設定
       const newWelcomeUrlInput = document.getElementById('welcomeUrlInput');
       const newWelcomeGoBtn = document.getElementById('welcomeGoBtn');
+      const newHistoryBtn = document.getElementById('historyBtn');
       newWelcomeGoBtn.addEventListener('click', () => loadUrl(newWelcomeUrlInput.value));
       newWelcomeUrlInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') loadUrl(newWelcomeUrlInput.value);
+      });
+      newHistoryBtn.addEventListener('click', () => {
+        showHistory();
+        historyModal.classList.add('show');
       });
       updateNavButtons();
     });
@@ -513,6 +942,23 @@
 
     reloadBtn.addEventListener('click', () => {
       if (currentUrl) loadUrl(currentUrl, false);
+    });
+    
+    historyBtn.addEventListener('click', () => {
+      showHistory();
+      historyModal.classList.add('show');
+    });
+    
+    closeHistoryBtn.addEventListener('click', () => {
+      historyModal.classList.remove('show');
+    });
+    
+    clearHistoryBtn.addEventListener('click', clearHistory);
+    
+    historyModal.addEventListener('click', (e) => {
+      if (e.target === historyModal) {
+        historyModal.classList.remove('show');
+      }
     });
   </script>
 </body>
